@@ -17,6 +17,7 @@ export default function RouteWrapper({
   if (!signed && isPrivate) {
     return <Redirect to="/" />;
   }
+
   if (signed && !isPrivate) {
     return <Redirect to="/dashboard" />;
   }
@@ -40,6 +41,7 @@ RouteWrapper.propTypes = {
   component: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
     .isRequired,
 };
+
 RouteWrapper.defaultProps = {
   isPrivate: false,
 };
