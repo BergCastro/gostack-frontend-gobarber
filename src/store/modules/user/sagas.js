@@ -13,6 +13,7 @@ export function* updateProfile({ payload }) {
       { name, email, avatar_id },
       rest.oldPassword ? rest : {}
     );
+
     const response = yield call(api.put, 'users', profile);
 
     toast.success('Perfil atualizado com sucesso!');
@@ -20,7 +21,7 @@ export function* updateProfile({ payload }) {
     yield put(updateProfileSuccess(response.data));
   } catch (err) {
     toast.error('Erro ao atualizar perfil, confira seus dados!');
-    // yield put(updateProfileFailure());
+    yield put(updateProfileFailure());
   }
 }
 

@@ -10,6 +10,7 @@ export const Badge = styled.button`
   background: none;
   border: 0;
   position: relative;
+
   ${props =>
     props.hasUnread &&
     css`
@@ -35,6 +36,7 @@ export const NotificationList = styled.div`
   border-radius: 4px;
   padding: 15px 5px;
   display: ${props => (props.visible ? 'block' : 'none')};
+
   &::before {
     content: '';
     position: absolute;
@@ -55,27 +57,32 @@ export const Scroll = styled(PerfectScrollbar)`
 
 export const Notification = styled.div`
   color: #fff;
+
   & + div {
     margin-top: 15px;
     padding-top: 15px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
+
   p {
     font-size: 13px;
     line-height: 18px;
   }
+
   time {
     display: block;
     font-size: 12px;
     opacity: 0.6;
     margin-bottom: 5px;
   }
+
   button {
     font-size: 12px;
     border: 0;
     background: none;
     color: ${lighten(0.2, '#7159c1')};
   }
+
   ${props =>
     props.unread &&
     css`

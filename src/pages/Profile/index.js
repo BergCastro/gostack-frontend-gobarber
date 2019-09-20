@@ -1,9 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Form, Input } from '@rocketseat/unform';
+
 import { signOut } from '~/store/modules/auth/actions';
 import { updateProfileRequest } from '~/store/modules/user/actions';
+
 import AvatarInput from './AvatarInput';
+
 import { Container } from './styles';
 
 export default function Profile() {
@@ -22,26 +25,22 @@ export default function Profile() {
     <Container>
       <Form initialData={profile} onSubmit={handleSubmit}>
         <AvatarInput name="avatar_id" />
+
         <Input name="name" placeholder="Nome completo" />
-        <Input
-          name="email"
-          type="email"
-          placeholder="Seu endereço de e-mail"
-          autocomplete="random"
-        />
+        <Input name="email" type="email" placeholder="Seu endereço de e-mail" />
 
         <hr />
 
         <Input
           type="text"
           className="password"
-          name="old"
+          name="oldPassword"
           placeholder="Sua senha atual"
         />
         <Input
           type="text"
           className="password"
-          name="newPassword"
+          name="password"
           placeholder="Nova senha"
         />
         <Input
